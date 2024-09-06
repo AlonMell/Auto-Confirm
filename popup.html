@@ -1,20 +1,26 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Presence Control</title>
+    <meta charset="UTF-8">
+    <title>Auto Presence Confirmation</title>
     <style>
         body {
             width: 200px;
-            text-align: center;
+            padding: 10px;
+            font-family: Arial, sans-serif;
         }
-        button {
-            width: 100%;
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
         }
     </style>
 </head>
 <body>
-<h1>Presence Control</h1>
-<button id="toggle">Toggle Extension</button>
+<label>
+    <input type="checkbox" id="toggle-extension">
+    Enable Auto Confirmation
+</label>
 <script src="popup.js"></script>
 </body>
 </html>

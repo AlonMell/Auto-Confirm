@@ -5,13 +5,17 @@
   "description": "Automatically clicks presence confirmation button.",
   "permissions": [
     "tabs",
-    "scripting"
+    "activeTab",
+    "scripting",
+    "storage"
   ],
   "action": {
-    "default_popup": "popup.html"
-  },
-  "background": {
-    "service_worker": "background.js"
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "favicon.ico",
+      "48": "favicon.ico",
+      "128": "favicon.ico"
+    }
   },
   "content_scripts": [
     {
@@ -19,10 +23,5 @@
       "js": ["content.js"],
       "run_at": "document_end"
     }
-  ],
-  "icons": {
-    "16": "favicon.ico",
-    "48": "favicon.ico",
-    "128": "favicon.ico"
-  }
+  ]
 }

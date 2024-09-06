@@ -45,16 +45,36 @@ const observer = new MutationObserver((mutations) => {
     });
 });
 
-const presenceControl = document.getElementById("presenceControl");
-if (presenceControl) {
-    console.log("Окно посещения уже открыто.")
-    observePresenceControlStyle(presenceControl);
-} else {
-    console.log("Окно посещения еще не открыто. Начинаем наблюдать за появлением.")
-    observer.observe(document.body, {
-        childList: true,
-        subtree: true
-    });
-}
+// const presenceControl = document.getElementById("presenceControl");
+// if (presenceControl) {
+//     console.log("Окно посещения уже открыто.")
+//     observePresenceControlStyle(presenceControl);
+// } else {
+//     console.log("Окно посещения еще не открыто. Начинаем наблюдать за появлением.")
+//     observer.observe(document.body, {
+//         childList: true,
+//         subtree: true
+//     });
+// }
 
-alert("Ты получил власть, которая и не снилась твоему отцу.")
+alert("Ты пытаешься получить власть, которая и не снилась твоему отцу.");
+
+chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+    if (message.extensionEnabled) {
+            const presenceControl = document.getElementById("presenceControl");
+            if (presenceControl) {
+                console.log("Окно посещения уже открыто.")
+                observePresenceControlStyle(presenceControl);
+            } else {
+                console.log("Окно посещения еще не открыто. Начинаем наблюдать за появлением.")
+                observer.observe(document.body, {
+                    childList: true,
+                    subtree: true
+                });
+            }
+
+            alert("Ты получил власть, которая и не снилась твоему отцу.");
+        } else {
+            alert("Ты не получил власть, которая и не снилась твоему отцу.");
+        }
+})
