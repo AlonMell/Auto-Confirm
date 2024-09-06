@@ -8,7 +8,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Загрузка состояния для этого URL
         chrome.storage.local.get([url], (result) => {
-            toggle.checked = result[url] !== false;
+            // Если состояние не сохранено, считаем, что расширение выключено
+            const isEnabled = result[url] !== undefined ? result[url] : false;
+            toggle.checked = isEnabled;
         });
 
         // Сохранение нового состояния для этого URL
