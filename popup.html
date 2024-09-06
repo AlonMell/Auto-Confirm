@@ -5,18 +5,46 @@
     <title>Auto Presence Confirmation</title>
     <style>
         body {
-            width: 200px;
-            padding: 10px;
-            font-family: Arial, sans-serif;
+            width: 250px;
+            padding: 20px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .header {
+            font-size: 18px;
+            color: #333;
+            font-weight: bold;
+            margin-bottom: 15px;
+            text-align: center;
         }
         label {
-            font-weight: bold;
-            display: block;
-            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin: 0;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            accent-color: #007bff;
+        }
+        label {
+            font-size: 16px;
+            color: #333;
         }
     </style>
 </head>
 <body>
+<div class="header">Aktru Sosat</div>
 <label>
     <input type="checkbox" id="toggle-extension">
     Enable Auto Confirmation
